@@ -1,0 +1,31 @@
+@use 'mixins' as *;
+@use 'defaults' as *;
+
+$letterSpacing: toRem(-0.1);
+
+@mixin text () {
+  font-size: toRem(15);
+  letter-spacing: $letterSpacing;
+  line-height: percent(22.5, 15);
+}
+
+@mixin text2 () {
+  font-size: toRem(14);
+  line-height: percent(22.5, 15);
+}
+
+.text {
+  @include text();
+}
+
+.text2 {
+  @include text2();
+  letter-spacing: $letterSpacing;
+}
+
+.text-consolas {
+  font-family: $fontFamilyConsolas;
+  letter-spacing: $letterSpacing;
+  font-size: toRem(12);
+  line-height: percent(16, 12);
+}

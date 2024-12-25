@@ -1,0 +1,77 @@
+@use "@/shared/assets/scss/abstract" as *;
+$trsDurDef: 0.3s;
+$easeDef: ease;
+
+// @include adaptiveValue("", , );
+
+
+.theme-choose {
+  font-size: toRem(0);
+
+  // .theme-choose__body
+  &__body {
+    padding: toRem(1);
+    display: inline-block;
+    border-radius: toRem(6);
+    background-color: $bgTertiaryColor;
+  }
+
+  // .theme-choose__button
+  &__button {
+    display: inline-flex;
+    position: relative;
+    z-index: 1;
+
+  }
+
+  // .theme-choose__hightlight
+  &__hightlight {
+    position: absolute;
+    width: calc(50% - toRem(1));
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: $bgColor;
+    z-index: -1;
+    transition: transform $trsDurDef $easeDef 0s;
+    border-radius: toRem(5);
+    @include themeValues(transform, translate(0, 0), translate(calc(100% + toRem(1)), 0));
+  }
+
+  // .theme-choose__item
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: toRem(24);
+    height: toRem(24);
+    opacity: 0.24;
+    transition: opacity $trsDurDef $easeDef 0s;
+
+    // .theme-choose__item_left
+    &_left {
+      @include themeValues(opacity, 1, 0.24);
+    }
+
+    // .theme-choose__item_right
+    &_right {
+      @include themeValues(opacity, 0.24, 1);
+    }
+  }
+
+  // .theme-choose__icon
+  &__icon {
+    font-size: 0;
+    line-height: 0;
+
+    img,
+    svg {
+      max-width: 100%;
+    }
+
+    svg path {
+      transition: fill $trsDurDef $easeDef 0s;
+      fill: $mainColor;
+    }
+  }
+}

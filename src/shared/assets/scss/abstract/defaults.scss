@@ -1,0 +1,86 @@
+@use "mixins.scss" as *;
+@use "fonts.scss" as *;
+$fontFamily: "Segoe";
+$fontFamilyConsolas: "Consolas";
+$fontSize: toRem(15);
+
+html {
+  @mixin changeToDef () {
+    --text-color: #202020;
+    --bg-color: #FCFCFC;
+    --bg-teritary: #E8E8E8;
+  }
+
+  @mixin changeToDark () {
+    --bg-color: #030303;
+    --text-color: #dfdfdf;
+    --bg-teritary: #171717;
+  }
+
+  @media (prefers-color-scheme: light) {
+    @include changeToDef();
+
+    &:has(.dark) {
+      @include changeToDark();
+    }
+
+    @supports not selector(:has(a, b)) {
+      .app.dark {
+        @include changeToDark();
+      }
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    @include changeToDark();
+
+    &:has(.light) {
+      @include changeToDef();
+    }
+
+    @supports not selector(:has(a, b)) {
+      .app.light {
+        @include changeToDef();
+      }
+    }
+  }
+
+  // @media (prefers-color-scheme: dark) {
+  //   @include changeToDark();
+  // }
+
+  // &:has(.dark) {
+  //   @include changeToDark();
+  // }
+
+  // @supports not selector(:has(a, b)) {
+  //   .app.dark {
+  //     @include changeToDark();
+  //   }
+  // }
+}
+
+
+$mainColor: var(--text-color);
+$bgColor: var(--bg-color);
+$bgTertiaryColor: var(--bg-teritary);
+$bgQuaternaryColor: #F0F0F0;
+$bgFivefoldColor: #FFFFFF;
+$dividedColor: #FCFCFC;
+$grayColor: #4B5563;
+$gray2Color: #6B7280;
+$greenColor: #33C759;
+
+
+$easeInOutCubic: cubic-bezier(0.65, 0, 0.35, 1);
+
+// Брейк-поинты
+$md0: em($maxWidth - 0.02); // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
+$md1: em($containerWidth - 0.02); // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
+$md2: em($tablet - 0.02); // Планшеты, некоторые телефоны в горизонтальном положении
+$md3: em($mob - 0.02); // Телефоны L
+$md4: em($mobSmall - 0.02); // Телефоны S
+//====================================================================================================
+// Header options
+$headerHeight: 50;
+$headerMobHeight: 50;

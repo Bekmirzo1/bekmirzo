@@ -1,0 +1,30 @@
+@font-face {
+  font-family: 'Segoe';
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+  src:
+    url("@/shared/assets/fonts/Segoe_UI.woff2") format("woff2"),
+    url("@/shared/assets/fonts/Segoe_UI.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Segoe';
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+  src:
+    url("@/shared/assets/fonts/Segoe_UI_Semibold.woff2") format("woff2"),
+    url("@/shared/assets/fonts/Segoe_UI_Semibold.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Consolas';
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+  src:
+    url("@/shared/assets/fonts/consolas.woff2") format("woff2"),
+    url("@/shared/assets/fonts/consolas.woff") format("woff");
+
+}

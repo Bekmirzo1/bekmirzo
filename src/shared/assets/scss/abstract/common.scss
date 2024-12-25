@@ -1,0 +1,30 @@
+@use 'mixins' as *;
+@use 'defaults' as *;
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.ibg {
+  position: relative;
+
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
+}
+
+.block {
+  display: block;
+}
+
+//====================================================================================================
+.mob {
+  @media (min-width: $md3) {
+    display: none;
+  }
+}

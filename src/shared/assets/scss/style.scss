@@ -1,0 +1,42 @@
+@use "sass:math";
+@use "null";
+@use "abstract" as *;
+@use "forms";
+
+
+
+
+
+
+html {
+  scroll-behavior: smooth;
+  // container padding
+  --container-padding: #{toRem($containerPadding)};
+
+}
+
+
+
+
+body {
+  background-color: $bgColor;
+  color: $mainColor;
+  overflow: hidden;
+
+  @supports not selector(:has(a, b)) {
+    .app {
+      background-color: $bgColor;
+      color: $mainColor;
+    }
+  }
+
+}
+
+.page {}
+
+[class*="__container"],
+.container {
+  max-width: toRem($containerWidth);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}

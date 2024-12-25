@@ -1,0 +1,43 @@
+@use "abstract" as *;
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  &:focus {
+    outline: none;
+  }
+}
+
+
+.form {
+  // .form__rows
+  &__rows {
+    display: grid;
+    gap: toRem(8);
+  }
+  // .form__input
+  &__input {
+  }
+		// .form__bottom
+		&__bottom {
+      padding: toRem(40) toRem(0) toRem(0) toRem(0);
+		}
+		// .form__button
+		&__button {
+      @media (any-hover: hover) {
+        transition: opacity 0.3s ease 0s;
+        &:hover {
+          opacity: 0.2;
+        }
+      }
+		}
+
+}
+
+
+
