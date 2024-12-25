@@ -66,7 +66,6 @@ onMounted(() => {
   // .app__wrapper
   &__wrapper {
     min-height: 100%;
-    overflow: hidden;
   }
 }
 </style>
