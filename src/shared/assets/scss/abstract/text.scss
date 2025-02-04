@@ -22,10 +22,62 @@ $letterSpacing: toRem(-0.1);
   @include text2();
   letter-spacing: $letterSpacing;
 }
+.text3 {
+  font-size: toRem(13);
+  line-height: percent(17.5, 13);
+  letter-spacing: $letterSpacing;
+}
 
 .text-consolas {
+  font-family: $fontFamilyConsolas;
+  font-size: toRem(14);
+  line-height: percent(28, 14);
+  letter-spacing: $letterSpacing;
+}
+.text-consolas2 {
   font-family: $fontFamilyConsolas;
   letter-spacing: $letterSpacing;
   font-size: toRem(12);
   line-height: percent(16, 12);
+}
+
+.text-consolas2-highlighted{
+  @extend .text-consolas2;
+  padding: toRem(2) toRem(4) toRem(0);
+  background-color: $bgQuaternaryColor;
+  display: inline-block;
+  margin: toRem(0) em(4, 12);
+  border: toRem(1) solid $dividedColor;
+  border-radius: toRem(4);
+}
+
+//====================================================================================================
+.headline{
+  font-size: toRem(18);
+  font-weight: 600;
+  line-height: percent(24.5, 18);
+  letter-spacing: $letterSpacing;
+}
+
+
+//====================================================================================================
+// Link
+
+.link {
+  text-decoration: underline;
+}
+
+a.link,
+a:has(.link) {
+  @media (any-hover: hover) {
+    &:hover {
+      color: $yellowColor;
+      text-decoration-color: $yellowColor;
+    }
+  }
+}
+
+//====================================================================================================
+.gray2{
+  color: $gray2Color;
 }

@@ -7,7 +7,7 @@ export default {
   routes: (_routes) => [
     {
       name: "home",
-      path: PAGE_ROUTES.home,
+      path: PAGE_ROUTES.home.link,
       meta: {
         header: "main",
       },
@@ -15,7 +15,7 @@ export default {
     },
     {
       name: "about",
-      path: PAGE_ROUTES.about,
+      path: PAGE_ROUTES.about.link,
       component: () =>
         import("@/views/AboutPage/ui/AboutPage.vue").then((r) => r.default || r),
       // component: () => AboutPage.then((r: typeof AboutPage) => r.default || r),
@@ -23,25 +23,25 @@ export default {
     },
     {
       name: "works",
-      path: PAGE_ROUTES.works,
+      path: PAGE_ROUTES.works.link,
       component: () =>
         import("@/views/WorksPage/ui/WorksPage.vue").then((r) => r.default || r),
     },
     {
       name: "archieve",
-      path: PAGE_ROUTES.archieve,
+      path: PAGE_ROUTES.archieve.link,
       component: () =>
         import("@/views/ArchievePage/ui/ArchievePage.vue").then((r) => r.default || r),
     },
     {
       name: "contact",
-      path: PAGE_ROUTES.contact,
+      path: PAGE_ROUTES.contact.link,
       component: () =>
         import("@/views/ContactPage/ui/ContactPage.vue").then((r) => r.default || r),
     },
     {
       name: "calculator",
-      path: PAGE_ROUTES.calculator,
+      path: PAGE_ROUTES.calculator.link,
       component: () =>
         import("@/views/CountPage/ui/CountPage.vue").then((r) => r.default || r),
     },

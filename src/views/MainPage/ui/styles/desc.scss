@@ -1,0 +1,76 @@
+@use "@/shared/assets/scss/abstract" as *;
+
+.desc-main {
+
+  // .desc-main__top
+  &__top {
+    margin: toRem(0) toRem(0) toRem(40) toRem(0);
+    padding: toRem(0) toRem(0) toRem(9) toRem(0);
+    border-bottom: toRem(1) solid $dividedColor;
+  }
+
+  // .desc-main__logo
+  &__logo {
+    width: toRem(24);
+    margin: toRem(0) toRem(0) toRem(24) toRem(0);
+  }
+
+  // .desc-main__logo-image
+  &__logo-image {
+    @extend .ibg;
+    padding-bottom: 100%;
+    @include overflow-hidden-strict;
+    border-radius: 50%;
+
+  }
+
+  // .desc-main__row
+  &__row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+   
+
+    // .desc-main__row-title
+    &-title {}
+
+    // .desc-main__row-right
+    &-right {
+      margin: toRem(12) toRem(0) toRem(0) toRem(0);
+    }
+
+    // .desc-main__row-link
+    &-link {
+      @extend .text-consolas2;
+      color: $gray2Color;
+    }
+  }
+
+  // .desc-main__body
+  &__body {}
+
+  // .desc-main__content
+  &__content {
+    @extend .text;
+    padding: toRem(0) toRem(0) toRem(24) toRem(0);
+    border-bottom: toRem(1) solid $dividedColor;
+
+    >p {
+      &:not(:last-child) {
+        margin-bottom: toRem(24);
+      }
+    }
+  }
+
+  // .desc-main__highlighted
+  &__highlighted {
+    @extend .text-consolas2-highlighted;
+  }
+
+  // .desc-main__bottom
+  &__bottom {
+    display: flex;
+    justify-content: flex-end;
+    margin: toRem(12) toRem(0) toRem(0) toRem(0);
+  }
+}

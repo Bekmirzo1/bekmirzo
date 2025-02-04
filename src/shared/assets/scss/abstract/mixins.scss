@@ -5,8 +5,8 @@
 // Настройки адаптивной сетки ===============================================================================================================================================================================================================================================================================================
 $minWidth: 375;
 $maxWidth: 1920;
-$maxWidthContainer: 1170;
-$containerPadding: 20;
+$maxWidthContainer: 1366;
+$containerPadding: 40;
 $containerPaddingMob: 12;
 
 
@@ -92,26 +92,41 @@ $mobSmallWithPadding: $mobSmall - $containerPaddingMob * 2;
 	grid-template-columns: repeat(auto-#{$type}, minmax($min, $max));
 }
 
+@mixin overflow-hidden-strict () {
+	overflow: hidden;
+	transform: translateZ(0);
+}
+
+@mixin overflow-clip () {
+	overflow: clip;
+
+	@supports not (overflow: clip) {
+		overflow: hidden;
+	}
+}
+
 
 @mixin themeValues ($property, $lightVal, $darkVal) {
-  @media (prefers-color-scheme: light) {
-    #{$property}: $lightVal;
+	@media (prefers-color-scheme: light) {
+		#{$property}: $lightVal;
 
-    .dark & {
-      #{$property}: $darkVal;
-    }
-  }
-  @media (prefers-color-scheme: dark) {
-    #{$property}: $darkVal;
+		.dark & {
+			#{$property}: $darkVal;
+		}
+	}
 
-    .light & {
-      #{$property}: $lightVal;
-    }
-  }
+	@media (prefers-color-scheme: dark) {
+		#{$property}: $darkVal;
+
+		.light & {
+			#{$property}: $lightVal;
+		}
+	}
 }
+
 // transition multiple
 $trsDur: 300ms;
-$optionsAnim: transform opacity;
+$optionsAnim: transform opacity visibility;
 
 
 @mixin transMultiple($prop: $optionsAnim,

@@ -1,1 +1,117 @@
 @use "@/shared/assets/scss/abstract" as *;
+
+.archieve {
+
+  // .archieve__breadcrumbs
+  &__breadcrumbs {
+    margin: toRem(0) toRem(0) toRem(40) toRem(0);
+  }
+
+  // .archieve__body
+  &__body {}
+
+  // .archieve__top
+  &__top {
+    margin: toRem(0) toRem(0) toRem(40) toRem(0);
+  }
+
+  // .archieve__title
+  &__title {
+    @extend .headline;
+    margin: toRem(0) toRem(0) toRem(6) toRem(0);
+  }
+
+  // .archieve__text
+  &__text {
+    @extend .text3;
+    @extend .gray2;
+  }
+
+  // .archieve__main
+  &__main {}
+
+  // .archieve__date
+  &__date {
+    border-bottom: toRem(1) solid $dividedColor;
+    display: flex;
+    justify-content: flex-end;
+    margin: toRem(0) toRem(0) toRem(18) toRem(0);
+
+    // .archieve__date-text
+    &-text {
+      @extend .text-consolas;
+      color: $gray3Color;
+    }
+  }
+
+
+  // .archieve__rows
+  &__rows {}
+
+  // .archieve__row
+  &__row {
+
+    // .archieve__row-body
+    &-body {
+      display: flex;
+      gap: toRem(8);
+      align-items: center;
+      justify-content: space-between;
+      padding: toRem(13) toRem(0);
+      border-radius: toRem(12);
+
+      @media (any-hover: hover) {
+        @include transMultiple(padding background-color, $trsDur, ease, 0s);
+        // transition: all $trsDur ease 0s;
+
+        &:hover {
+          padding: toRem(13) toRem(12);
+          background-color: $bgQuaternaryColor;
+
+          .archieve__row-line {
+            opacity: 0;
+            visibility: hidden;
+          }
+        }
+      }
+    }
+
+    // .archieve__row-left
+    &-left {
+      @extend .text2;
+      display: flex;
+      gap: toRem(6);
+    }
+
+    // .archieve__row-name
+    &-name {
+      font-weight: 600;
+      margin: toRem(0) toRem(6) toRem(0) toRem(0);
+    }
+
+    // .archieve__row-type
+    &-type {
+      color: $gray2Color;
+    }
+
+    // .archieve__row-line
+    &-line {
+      flex: 1 1 auto;
+      display: block;
+      height: toRem(1);
+      background-color: $dividedColor;
+      @include transMultiple($optionsAnim, $trsDur, ease, 0s);
+      // transition: opacity $trsDur ease 0s;
+    }
+
+    // .archieve__row-right
+    &-right {}
+
+    // .archieve__row-year
+    &-year {
+      @extend .text-consolas2;
+    }
+  }
+
+
+}

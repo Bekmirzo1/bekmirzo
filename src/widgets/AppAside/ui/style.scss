@@ -1,1 +1,104 @@
 @use "@/shared/assets/scss/abstract" as *;
+
+.aside {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+
+  // .aside__body
+  &__body {
+    pointer-events: auto;
+    padding: toRem(40);
+    // padding: toRem(40) toRem(0) toRem(40) toRem(40);
+  }
+
+  // .aside__top
+  &__top {
+    margin: toRem(0) toRem(0) toRem(24) toRem(0);
+  }
+
+  // .aside__logo
+  &__logo {
+    width: toRem(48);
+    margin: toRem(0) toRem(0) toRem(24) toRem(0);
+  }
+
+  // .aside__logo-image
+  &__logo-image {
+    @extend .ibg;
+    display: block;
+    padding-bottom: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    transform: translateZ(0);
+  }
+
+  // .aside__name
+  &__name {
+    @extend .text;
+    font-weight: 600;
+  }
+
+  // .aside__activity
+  &__activity {
+    @extend .text2;
+    color: $grayColor;
+  }
+
+  // .aside__text
+  &__text {
+    @extend .text2;
+    color: $grayColor;
+    margin: toRem(24) toRem(0) toRem(0) toRem(0);
+  }
+
+  // .aside__links
+  &__links {}
+}
+
+.links-aside {
+
+  // .links-aside__blocks
+  &__blocks {
+    display: inline-block;
+  }
+
+  // .links-aside__block
+  &__block {
+    &:not(:last-child) {
+      padding-bottom: toRem(24);
+      margin-bottom: toRem(24);
+      border-bottom: toRem(1) solid $grayColor;
+    }
+  }
+
+  // .links-aside__list
+  &__list {}
+
+  // .links-aside__pages
+  &__pages {}
+
+  // .links-aside__item
+  &__item {}
+
+  // .links-aside__link
+  &__link {
+    @extend .text;
+    font-weight: 600;
+
+    // display: inline-flex;
+    // align-items: flex-end;
+    // .links-aside__link-text
+    &-text {
+      @extend .link;
+    }
+
+    // .links-aside__link-icon
+    &-icon {
+      font-size: toRem(12);
+      line-height: percent(16, 12);
+    }
+  }
+
+}

@@ -4,24 +4,23 @@
 @use "forms";
 
 
-
-
-
-
 html {
   scroll-behavior: smooth;
   // container padding
   --container-padding: #{toRem($containerPadding)};
-
 }
 
+*::selection {
+  background-color: $mainColor;
+  color: $bgColor;
+}
 
 
 
 body {
   background-color: $bgColor;
   color: $mainColor;
-  overflow: hidden;
+  @include overflow-clip;
 
   @supports not selector(:has(a, b)) {
     .app {
@@ -36,7 +35,7 @@ body {
 
 [class*="__container"],
 .container {
-  max-width: toRem($containerWidth);
+  // max-width: toRem($containerWidth);
   margin: 0 auto;
   padding: 0 var(--container-padding);
 }

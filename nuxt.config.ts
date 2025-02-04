@@ -9,14 +9,18 @@ export default defineNuxtConfig({
 
   app: {
     // baseURL: development ? "/" : "/sites/mysite/",
-    baseURL: '/',
+    baseURL: "/",
+    head: {
+      htmlAttrs: { lang: "ru" },
+      link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    },
   },
 
   modules: ["@nuxt/eslint", "@nuxtjs/device", "@pinia/nuxt"],
 
-  // build: {
-  //   transpile: ["gsap"], // https://nuxt.com/docs/api/nuxt-config#transpile
-  // },
+  build: {
+    transpile: ["gsap"], // https://nuxt.com/docs/api/nuxt-config#transpile
+  },
   typescript: {
     tsConfig: {
       compilerOptions: {
@@ -27,7 +31,10 @@ export default defineNuxtConfig({
       },
     },
   },
-
+  dir: {
+    public: "shared/public",
+    assets: "@/shared/assets",
+  },
   // imports: {
   //   dirs: [
   //     'shared/composables',
@@ -61,11 +68,10 @@ export default defineNuxtConfig({
     css: {
       preprocessorOptions: {
         scss: {
-          api: 'modern-compiler',
-          additionalData: '@use "@/shared/assets/scss/abstract" as *;'
+          api: "modern-compiler",
+          additionalData: '@use "@/shared/assets/scss/abstract" as *;',
         },
       },
     },
   },
-
-})
+});

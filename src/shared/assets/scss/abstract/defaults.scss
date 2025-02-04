@@ -4,17 +4,20 @@ $fontFamily: "Segoe";
 $fontFamilyConsolas: "Consolas";
 $fontSize: toRem(15);
 
-html {
+:root {
   @mixin changeToDef () {
     --text-color: #202020;
     --bg-color: #FCFCFC;
+    --yellow-color: #D1AA2B;
     --bg-teritary: #E8E8E8;
+    --bg-five-fold-color: #fff;
   }
 
   @mixin changeToDark () {
     --bg-color: #030303;
     --text-color: #dfdfdf;
     --bg-teritary: #171717;
+    --bg-five-fold-color: #000;
   }
 
   @media (prefers-color-scheme: light) {
@@ -65,11 +68,13 @@ $mainColor: var(--text-color);
 $bgColor: var(--bg-color);
 $bgTertiaryColor: var(--bg-teritary);
 $bgQuaternaryColor: #F0F0F0;
-$bgFivefoldColor: #FFFFFF;
-$dividedColor: #FCFCFC;
+$bgFivefoldColor: var(--bg-five-fold-color);
+$dividedColor: #E8E8E8;
 $grayColor: #4B5563;
 $gray2Color: #6B7280;
+$gray3Color: #9CA3AF;
 $greenColor: #33C759;
+$yellowColor: var(--yellow-color);
 
 
 $easeInOutCubic: cubic-bezier(0.65, 0, 0.35, 1);

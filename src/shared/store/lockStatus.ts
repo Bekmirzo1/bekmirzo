@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 
-export const PageLockStore = defineStore("page-lock-status", () => {
+export const useLockStatusStore = defineStore("lock-status", () => {
   const locked = ref(false);
   function unLockPage() {
     locked.value = false;
