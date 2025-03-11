@@ -6,7 +6,6 @@ import {
 } from "@/shared/store";
 import { ThemeChoose } from "@/entities/ThemeChoose/";
 import { AppAside } from "./widgets/AppAside";
-import { AppPreload } from "./app/AppPreload";
 import { AppCover } from "./app/AppCover";
 // useHead({ htmlAttrs: { lang: "ru" } });
 const appTransitionStore = useAppTransitionStore();
@@ -42,6 +41,7 @@ watch(
   { once: true },
 );
 loadStore.mainLoad();
+const appLoaded = ref(false);
 onMounted(() => {
   if (isDark.value === null) {
     const getCurrentTheme = (): boolean =>
@@ -52,6 +52,7 @@ onMounted(() => {
       isDark.value = false;
     }
   }
+  appLoaded.value = true;
 });
 </script>
 <template>
@@ -61,6 +62,7 @@ onMounted(() => {
       'locked': pageLockStatus.locked === true,
       'dark': isDark,
       'light': isDark == false,
+      'loaded': appLoaded === true,
     }">
     <!-- <AppPreload /> -->
     <AppCover />
@@ -85,9 +87,15 @@ onMounted(() => {
 }
 .app {
   flex: 1 1 auto;
+  opacity: 0;
+  visibility: hidden;
   overflow-y: auto;
   &.locked {
     @include overflow-clip;
+  }
+  &.loaded{
+    opacity: 1;
+    visibility: visible;
   }
   // .app__wrapper
   &__wrapper {

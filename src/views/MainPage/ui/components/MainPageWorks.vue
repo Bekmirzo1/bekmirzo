@@ -1,9 +1,25 @@
 <script setup lang="ts">
+import gsap from "gsap";
+// import { ScrollTrigger } from "gsap/all";
 interface Work {
   name: string;
   date: string;
   image?: string;
 }
+
+// onMounted(() => {
+//   // gsap.registerPlugin(ScrollTrigger);
+//   let tl = gsap.timeline({
+//     scrollTrigger: {
+//       trigger: ".projects-works-main__image",
+//       start: "top bottom",
+//       end: "bottom top",
+//       scrub: false,
+//       markers: true,
+//       id: "scrub",
+//     },
+//   });
+// });
 
 const projectsList: Work[] = [
   {

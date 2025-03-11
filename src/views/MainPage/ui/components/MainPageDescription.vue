@@ -7,6 +7,9 @@ const elemsAnim = ref([]);
 function setRef(el: HTMLElement) {
   elemsAnim.value.push(el);
 }
+// if (import.meta.client) {
+//   gsap.registerPlugin(ScrollTrigger);
+// }
 
 function setBeforeAnim() {
   gsap.set(elemsAnim.value, {
@@ -14,6 +17,7 @@ function setBeforeAnim() {
     y: "1em",
     filter: "blur(4px)",
   });
+  
 }
 function descriptionAnimations(): void {
   const timeline = gsap.timeline({
@@ -29,9 +33,9 @@ function descriptionAnimations(): void {
     y: "0",
     stagger: 0.03,
     filter: "blur(0px)",
-    scrollTrigger: {
-      trigger: elemsAnim.value,
-    },
+    // scrollTrigger: {
+    //   trigger: elemsAnim.value,
+    // },
   });
 }
 if (productionMode) {
