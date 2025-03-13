@@ -93,7 +93,7 @@ if (productionMode) {
             opacity: animationList[elemsToAnim.subtitle].opacity,
             visibility: animationList[elemsToAnim.subtitle].visibility,
           }">
-          Front-end разработчик, фриланс
+          р. 2002 в Самарканде. нахожусь в Узбекистане.
         </div>
         <div
           class="aside__text"
@@ -101,7 +101,7 @@ if (productionMode) {
             opacity: animationList[elemsToAnim.text].opacity,
             visibility: animationList[elemsToAnim.text].visibility,
           }">
-          22 года, родился в Самарканде, Узбекистан.
+          middle front-end разработчик, фриланс
         </div>
       </div>
       <div class="aside__links links-aside">
@@ -173,7 +173,7 @@ if (productionMode) {
                     </template>
                     <template
                       v-if="asideRoute2.route === PAGE_ROUTES.calculator.link">
-                      🧮
+                      💰
                     </template>
                   </span>
                 </nuxt-link>

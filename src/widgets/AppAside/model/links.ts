@@ -7,6 +7,5 @@ interface Link {
 
 export const asideLinks: Link[] = [
   { name: "telegram", link: SOCIAL_LINKS.telegram },
-  { name: "github", link: SOCIAL_LINKS.github },
   { name: "e-mail", link: SOCIAL_LINKS.email },
 ] as const;

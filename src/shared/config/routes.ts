@@ -5,6 +5,13 @@ export interface PageRoute {
 }
 
 interface PageRoutes {
+  home: PageRoute;
+  works: PageRoute;
+  about: PageRoute;
+  archieve: PageRoute;
+  contact: PageRoute;
+  agreement: PageRoute;
+  calculator: PageRoute;
   [key: string]: PageRoute;
 }
 export const PAGE_ROUTES: PageRoutes = {
@@ -14,6 +21,7 @@ export const PAGE_ROUTES: PageRoutes = {
   archieve: { link: "/archieve", name: "архив", parent: "home" },
   contact: { link: "/contact", name: "контакты", parent: "home" },
   calculator: { link: "/calculator", name: "калькулятор", parent: "home" },
+  agreement: { link: "/agreement", name: "условия", parent: "home" },
 } as const;
 
 type RoutesKeys = keyof typeof PAGE_ROUTES;
