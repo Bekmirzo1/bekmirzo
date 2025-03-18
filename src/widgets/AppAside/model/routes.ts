@@ -15,6 +15,6 @@ export const asideMainRoutes: MainRoute[] = [
 ] as const;
 export const asideRoutesMore: MainRouteEmoji[] = [
   { name: "read.cv", route: PAGE_ROUTES.about.link, icon: '💼' },
-  { name: "стоимость", route: PAGE_ROUTES.calculator.link, icon: '💰' },
+  { name: "стоимость", route: PAGE_ROUTES.price.link, icon: '💰' },
   { name: "условия", route: PAGE_ROUTES.agreement.link, icon: '🤝' },
 ] as const;

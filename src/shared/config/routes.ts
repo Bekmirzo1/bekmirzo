@@ -11,7 +11,7 @@ interface PageRoutes {
   archieve: PageRoute;
   contact: PageRoute;
   agreement: PageRoute;
-  calculator: PageRoute;
+  price: PageRoute;
   [key: string]: PageRoute;
 }
 export const PAGE_ROUTES: PageRoutes = {
@@ -20,7 +20,7 @@ export const PAGE_ROUTES: PageRoutes = {
   about: { link: "/about", name: "cv", parent: "home" },
   archieve: { link: "/archieve", name: "архив", parent: "home" },
   contact: { link: "/contact", name: "контакты", parent: "home" },
-  calculator: { link: "/calculator", name: "калькулятор", parent: "home" },
+  price: { link: "/price", name: "калькулятор", parent: "home" },
   agreement: { link: "/agreement", name: "условия", parent: "home" },
 } as const;
 

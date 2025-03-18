@@ -1,6 +1,13 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+useHead({
+  title: "Стоимость",
+});
+
+</script>
 <template>
-  <div> </div>
+  <div>
+    
+    </div>
 </template>
 <style lang="scss" scoped>
 @use "./style.scss";

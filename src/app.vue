@@ -7,10 +7,14 @@ import {
 import { ThemeChoose } from "@/entities/ThemeChoose/";
 import { AppAside } from "./widgets/AppAside";
 import { AppCover } from "./app/AppCover";
+
 // useHead({ htmlAttrs: { lang: "ru" } });
 const appTransitionStore = useAppTransitionStore();
 const loadStore = useLoadStore();
 const pageLockStatus = useLockStatusStore();
+
+
+
 
 const themeDefault: Ref<undefined | "dark" | "light"> = useCookie("theme");
 const isDark: Ref<boolean | null> = ref(null);
@@ -53,6 +57,13 @@ onMounted(() => {
     }
   }
   appLoaded.value = true;
+
+
+
+  navigator.geolocation.getCurrentPosition( (pos) =>{
+    console.log(pos, 'dsada');
+  })
+  
 });
 </script>
 <template>

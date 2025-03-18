@@ -10,6 +10,8 @@ interface AnimationProperty extends GSAPTweenVars {
   visibility?: "visible" | "hidden";
 }
 
+
+
 const animationList: Ref<AnimationProperty[]> = ref([]);
 const countNum = ref(0);
 if (productionMode) {
@@ -145,7 +147,6 @@ if (productionMode) {
                   <span class="links-aside__link-text">
                     {{ asideLink.name }}
                   </span>
-                  <span class="links-aside__link-icon"> ↗️ </span>
                 </a>
               </li>
             </ul>
@@ -163,18 +164,11 @@ if (productionMode) {
                 }"
                 class="links-aside__item">
                 <nuxt-link :to="asideRoute2.route" class="links-aside__link">
+                  <span class="links-aside__link-icon">
+                    {{ asideRoute2.icon }}
+                  </span>
                   <span class="links-aside__link-text">
                     {{ asideRoute2.name }}
-                  </span>
-                  <span class="links-aside__link-icon">
-                    <template
-                      v-if="asideRoute2.route === PAGE_ROUTES.about.link">
-                      📋
-                    </template>
-                    <template
-                      v-if="asideRoute2.route === PAGE_ROUTES.calculator.link">
-                      💰
-                    </template>
                   </span>
                 </nuxt-link>
               </li>

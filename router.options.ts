@@ -40,10 +40,16 @@ export default {
         import("@/views/ContactPage/ui/ContactPage.vue").then((r) => r.default || r),
     },
     {
-      name: "calculator",
-      path: PAGE_ROUTES.calculator.link,
+      name: "price",
+      path: PAGE_ROUTES.price.link,
       component: () =>
         import("@/views/CountPage/ui/CountPage.vue").then((r) => r.default || r),
+    },
+    {
+      name: "agreement",
+      path: PAGE_ROUTES.agreement.link,
+      component: () =>
+        import("@/views/AgreementPage/ui/AgreementPage.vue").then((r) => r.default || r),
     },
   ],
 } satisfies RouterConfig;

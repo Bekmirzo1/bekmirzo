@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { MainPage } from "@/views/MainPage";
 
+
 </script>
 <template>
   <MainPage />

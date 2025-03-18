@@ -15,13 +15,13 @@
 
   // .aside__top
   &__top {
-    margin: toRem(0) toRem(0) toRem(24) toRem(0);
+    margin: toRem(0) toRem(0) toRem(16) toRem(0);
   }
 
   // .aside__logo
   &__logo {
     width: toRem(48);
-    margin: toRem(0) toRem(0) toRem(24) toRem(0);
+    margin: toRem(0) toRem(0) toRem(16) toRem(0);
   }
 
   // .aside__logo-image
@@ -43,14 +43,12 @@
   // .aside__activity
   &__activity {
     @extend .text2;
-    color: $grayColor;
   }
 
   // .aside__text
   &__text {
     @extend .text2;
-    color: $grayColor;
-    margin: toRem(24) toRem(0) toRem(0) toRem(0);
+    margin: toRem(16) toRem(0) toRem(0) toRem(0);
   }
 
   // .aside__links
@@ -67,8 +65,8 @@
   // .links-aside__block
   &__block {
     &:not(:last-child) {
-      padding-bottom: toRem(24);
-      margin-bottom: toRem(24);
+      padding-bottom: toRem(16);
+      margin-bottom: toRem(16);
       border-bottom: toRem(1) solid $grayColor;
     }
   }
@@ -96,8 +94,8 @@
 
     // .links-aside__link-icon
     &-icon {
-      font-size: toRem(12);
-      line-height: percent(16, 12);
+      // font-size: toRem(12);
+      // line-height: percent(16, 12);
     }
   }
 
