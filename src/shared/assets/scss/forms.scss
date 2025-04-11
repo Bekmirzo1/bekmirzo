@@ -4,6 +4,7 @@ input[type="text"],
 input[type="password"],
 input[type="email"],
 input[type="tel"],
+input[type="number"],
 textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -18,7 +19,7 @@ textarea {
   // .form__rows
   &__rows {
     display: grid;
-    gap: toRem(8);
+    gap: toRem(10);
   }
   // .form__input
   &__input {

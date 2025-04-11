@@ -1,0 +1,63 @@
+@use "@/shared/assets/scss/abstract" as *;
+
+.price-form {
+
+  background-color: $bg2Color;
+  border: toRem(1) solid $dividedColor;
+  border-radius: toRem(16);
+  padding: toRem(10);
+
+  // .price-form__top
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    margin: toRem(0) toRem(0) toRem(20) toRem(0);
+  }
+
+  // .price-form__title
+  &__title {
+    @extend .headline-big;
+  }
+
+  // .price-form__row
+  &__row {
+    background-color: $bgColor;
+    border: toRem(1) solid $dividedColor;
+    border-radius: toRem(10);
+    padding: toRem(10);
+  }
+
+  // .price-form__amount
+  &__amount {
+
+    // .price-form__amount-result
+    &-result {
+      display: flex;
+      gap: toRem(6);
+      align-items: center;
+      margin: toRem(0) toRem(0) toRem(10) toRem(0);
+    }
+
+    // .price-form__amount-result-text
+    &-result-text {
+      @extend .text2;
+      color: $grayColor;
+    }
+
+    // .price-form__amount-result-input
+    &-result-input {}
+  }
+
+  // .price-form__options
+  &__options {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: toRem(4);
+  }
+
+  // .price-form__option
+  &__option {
+    padding: toRem(4) toRem(0);
+  }
+}

@@ -1,1 +1,271 @@
 @use "@/shared/assets/scss/abstract" as *;
+
+$marginBottom: 48;
+
+.price {
+
+  // .price__top
+  &__top {
+    margin: toRem(0) toRem(0) toRem(48) toRem(0);
+  }
+
+  // .price__body
+  &__body {}
+
+  // .price__calculator
+  &__calculator {
+    margin: toRem(0) toRem(0) toRem($marginBottom) toRem(0);
+  }
+
+  // .price__bonuses
+  &__bonuses {
+    margin: toRem(0) toRem(0) toRem($marginBottom) toRem(0);
+  }
+
+  // .price__prepayment
+  &__prepayment {
+    margin: toRem(0) toRem(0) toRem($marginBottom) toRem(0);
+  }
+
+  // .price__bills
+  &__bills {
+    margin: toRem(0) toRem(0) toRem(48) toRem(0);
+  }
+
+  // .price__ready
+  &__ready {
+    margin: toRem(0) toRem(0) toRem(28) toRem(0);
+  }
+}
+
+
+
+
+
+// Price Bonuses
+.bonus-price {
+
+  // .bonus-price__top
+  &__top {
+    margin: toRem(0) toRem(0) toRem(24) toRem(0);
+    padding: toRem(3) toRem(3) toRem(1);
+    background-color: $bgQuaternaryColor;
+    border: toRem(1) solid $dividedColor;
+    border-radius: toRem(4);
+    display: inline-block;
+  }
+
+  // .bonus-price__title
+  &__title {
+    @extend .text-consolas;
+    @extend .text-consolas_2;
+    font-weight: 700;
+  }
+
+  // .bonus-price__rows
+  &__rows {}
+
+  // .bonus-price__row
+  &__row {
+    &:not(:last-child) {
+      margin-bottom: toRem(14);
+    }
+  }
+
+  // .bonus-price__item
+  &__item {
+    border: toRem(1) solid $divided2Color;
+    padding: toRem(13);
+    border-radius: toRem(8);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  // .bonus-price__left
+  &__left {}
+
+  // .bonus-price__row-title
+  &__row-title {
+    @extend .headline-consolas;
+    line-height: 1;
+    vertical-align: bottom;
+    margin: toRem(0) toRem(0) toRem(5) toRem(0);
+  }
+
+  // .bonus-price__text
+  &__text {
+    @extend .text2;
+    @extend .text2_2;
+    color: $grayColor;
+  }
+
+  // .bonus-price__right
+  &__right {}
+
+  // .bonus-price__free
+  &__free {
+    @extend .headline2;
+    color: $greenColor;
+    user-select: none;
+    margin: toRem(-3) toRem(0) toRem(0) toRem(0);
+  }
+}
+
+// Price Prepaypent
+.prepayment-price {
+
+  // .prepayment-price__title
+  &__title {
+    @extend .headline2;
+    color: $gray2Color;
+    margin: toRem(0) toRem(0) toRem(28) toRem(0);
+  }
+
+  // .prepayment-price__text
+  &__text {
+    @extend .text;
+    margin: toRem(0) toRem(0) toRem(28) toRem(0);
+  }
+
+  // .prepayment-price__image
+  &__image {
+    background-color: $bgFivefoldColor;
+    border: toRem(1) solid $dividedColor;
+    border-radius: toRem(8);
+
+    // .prepayment-price__image-wrapper
+    &-wrapper {
+      background-color: $bg2Color;
+      border-radius: toRem(8);
+      // background-color: red;
+      display: block;
+      padding: toRem(4);
+      // pointer-events: none;
+
+      @media (any-hover: hover) {
+        transition: transform 0.3s ease 0s;
+
+        &:hover {
+          transform: scale(0.98);
+          // background-color: $gray3Color;
+        }
+      }
+    }
+
+    // .prepayment-price__image-body
+    &-body {
+      @include overflow-hidden-strict;
+      border-radius: toRem(5);
+      @extend .ibg;
+      padding-bottom: percent(449, 588);
+
+      .dark & {
+        filter: grayscale(1) invert(1);
+      }
+    }
+  }
+
+  // .prepayment-price__button
+  &__button {}
+
+  // .prepayment-price__button-body
+  &__button-body {
+    @extend .text2;
+    @extend .text2_2;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: toRem(18) toRem(20) toRem(14);
+    margin: toRem(5) toRem(0) toRem(0) toRem(0);
+    background-color: $bgFivefoldColor;
+    color: $gray2Color;
+    border-radius: toRem(5);
+  }
+}
+
+// Price Bills
+.bills-price {
+
+  // .bills-price__title
+  &__title {
+    @extend .headline2;
+    color: $gray2Color;
+    margin: toRem(0) toRem(0) toRem(8) toRem(0);
+  }
+
+  // .bills-price__list
+  &__list {
+
+    // .bills-price__list-item
+    &-item {
+      @extend .text;
+      display: flex;
+      align-items: center;
+      line-height: percent(25, 14);
+
+      &:not(:last-child) {
+        margin-bottom: em(8, 14);
+      }
+
+      &::before {
+        content: "";
+        width: em(5, 14);
+        height: em(5, 14);
+        background-color: $mainColor;
+        margin: 0px 1em;
+        border-radius: 50%;
+      }
+    }
+
+    // .bills-price__list-body
+    &-body {
+      display: inline-flex;
+      gap: toRem(2);
+
+      strong {
+        font-weight: 700 !important;
+      }
+    }
+
+  }
+}
+
+
+
+.ready-price {
+
+  // .ready-price__title
+  &__title {
+    @extend .headline2;
+    color: $gray2Color;
+    margin: toRem(0) toRem(0) toRem(14) toRem(0);
+  }
+
+  // .ready-price__columns
+  &__columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: toRem(14);
+  }
+
+  // .ready-price__column
+  &__column {
+    display: flex;
+  }
+
+  // .ready-price__item
+  &__item {
+    display: block;
+    border-radius: toRem(4);
+    background-color: $bg2Color;
+    padding: toRem(14);
+  }
+
+  // .ready-price__text
+  &__text {
+    @extend .text;
+    font-weight: 600;
+  }
+}

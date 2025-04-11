@@ -12,19 +12,17 @@
 
   // .archieve__top
   &__top {
-    margin: toRem(0) toRem(0) toRem(40) toRem(0);
+    margin: toRem(0) toRem(0) toRem(56) toRem(0);
   }
 
   // .archieve__title
   &__title {
-    @extend .headline;
-    margin: toRem(0) toRem(0) toRem(6) toRem(0);
+   
   }
 
   // .archieve__text
   &__text {
-    @extend .text3;
-    @extend .gray2;
+   
   }
 
   // .archieve__main

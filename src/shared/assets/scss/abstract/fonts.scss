@@ -17,6 +17,15 @@
     url("@/shared/assets/fonts/Segoe_UI_Semibold.woff2") format("woff2"),
     url("@/shared/assets/fonts/Segoe_UI_Semibold.woff") format("woff");
 }
+@font-face {
+  font-family: 'Segoe';
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+  src:
+    url("@/shared/assets/fonts/Segoe_UI_Bold.woff2") format("woff2"),
+    url("@/shared/assets/fonts/Segoe_UI_Bold.woff") format("woff");
+}
 
 @font-face {
   font-family: 'Consolas';
@@ -26,5 +35,13 @@
   src:
     url("@/shared/assets/fonts/consolas.woff2") format("woff2"),
     url("@/shared/assets/fonts/consolas.woff") format("woff");
-
+}
+@font-face {
+  font-family: 'Consolas';
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+  src:
+    url("@/shared/assets/fonts/consolas_bold.woff2") format("woff2"),
+    url("@/shared/assets/fonts/consolas_bold.woff") format("woff");
 }

@@ -1,0 +1,61 @@
+@use "@/shared/assets/scss/abstract" as *;
+
+.footer {
+  padding: toRem(12) toRem(0) toRem(0) toRem(0);
+
+  // .footer__body
+  &__body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: toRem(1) solid $dividedColor;
+    padding: toRem(5) toRem(0) toRem(0) toRem(0);
+  }
+
+  // .footer__left
+  &__left {
+    @extend .text2;
+    line-height: percent(21.6, 12.5);
+    color: $grayColor;
+  }
+
+  // .footer__time
+  &__time {}
+
+  // .footer__date
+  &__date {
+    margin: em(-1, 12.5) toRem(0) toRem(0) toRem(0);
+  }
+
+  // .footer__right
+  &__right {}
+
+  // .footer__author
+  &__author {
+    display: flex;
+  }
+
+  // .footer__author-link
+  &__author-link {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  // .footer__author-text
+  &__author-text {
+    @extend .text2;
+    color: $grayColor;
+  }
+
+  // .footer__author-icon
+  &__author-icon {
+    display: inline-block;
+    @include overflow-hidden-strict;
+    border-radius: toRem(6);
+    width: toRem(21);
+    margin: toRem(0) toRem(0) toRem(0) toRem(8);
+    img {
+      max-width: 100%;
+    }
+  }
+}

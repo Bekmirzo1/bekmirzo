@@ -1,16 +1,23 @@
 <script setup lang="ts">
-import { BreadCrumbs } from "@/shared/UI/BreadCrumbs";
+import { VBreadCrumbs } from "@/shared/UI/BreadCrumbs";
 </script>
 <template>
   <div class="archieve">
     <div class="archieve__body">
-      <BreadCrumbs class="archieve__breadcrumbs" />
+      <VTopPage class="archieve__top">
+        архив <span class="gray2">/ с чего я начинал путь</span>
+        <template #text>
+          первичные сайты + экспериментальные
+        </template>
+      </VTopPage>
+      <!-- <VBreadCrumbs class="archieve__breadcrumbs" />
       <div class="archieve__top">
         <h1 class="archieve__title">
           архив <span class="gray2">/ с чего я начинал путь</span>
         </h1>
         <div class="archieve__text"> первичные сайты + экспериментальные </div>
-        <div class="archieve__main"></div>
+      </div> -->
+      <div class="archieve__main">
         <div class="archieve__date">
           <div class="archieve__date-text"> 2020 → н.в. </div>
         </div>

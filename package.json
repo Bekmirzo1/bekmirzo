@@ -10,9 +10,11 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@chenfengyuan/vue-number-input": "2",
     "@nuxt/kit": "^3.13.1",
     "@nuxtjs/device": "^3.2.2",
     "@pinia/nuxt": "^0.5.4",
+    "@vueform/slider": "^2.1.10",
     "gsap": "^3.12.5",
     "nuxt": "^3.13.2",
     "pinia": "^2.2.2"

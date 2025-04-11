@@ -1,5 +1,6 @@
 export const SOCIAL_LINKS = {
   telegram: "https://t.me/bek_azim",
+  designer: "https://t.me/ivantaskayev",
   github: "https://github.com/Bekmirzo1?tab=repositories",
   email: "mailto:azimovbekmirzo0@gmail.com",
 } as const;

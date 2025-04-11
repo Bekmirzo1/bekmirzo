@@ -8,6 +8,7 @@ $fontSize: toRem(15);
   @mixin changeToDef () {
     --text-color: #202020;
     --bg-color: #FCFCFC;
+    --bg-color2: #F5F5F5;
     --yellow-color: #D1AA2B;
     --bg-teritary: #E8E8E8;
     --bg-five-fold-color: #fff;
@@ -15,6 +16,7 @@ $fontSize: toRem(15);
 
   @mixin changeToDark () {
     --bg-color: #030303;
+    --bg-color2: #1a1a1a;
     --text-color: #dfdfdf;
     --bg-teritary: #171717;
     --bg-five-fold-color: #000;
@@ -66,14 +68,16 @@ $fontSize: toRem(15);
 
 $mainColor: var(--text-color);
 $bgColor: var(--bg-color);
+$bg2Color: var(--bg-color2);
 $bgTertiaryColor: var(--bg-teritary);
 $bgQuaternaryColor: #F0F0F0;
 $bgFivefoldColor: var(--bg-five-fold-color);
 $dividedColor: #E8E8E8;
+$divided2Color: #D1D5DB;
 $grayColor: #4B5563;
 $gray2Color: #6B7280;
 $gray3Color: #9CA3AF;
-$greenColor: #33C759;
+$greenColor: #15803D;
 $yellowColor: var(--yellow-color);
 
 

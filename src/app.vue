@@ -5,8 +5,9 @@ import {
   useLoadStore,
 } from "@/shared/store";
 import { ThemeChoose } from "@/entities/ThemeChoose/";
-import { AppAside } from "./widgets/AppAside";
 import { AppCover } from "./app/AppCover";
+import { AppAside } from "./widgets/AppAside";
+import { AppFooter } from "./widgets/AppFooter";
 
 // useHead({ htmlAttrs: { lang: "ru" } });
 const appTransitionStore = useAppTransitionStore();
@@ -60,9 +61,9 @@ onMounted(() => {
 
 
 
-  navigator.geolocation.getCurrentPosition( (pos) =>{
-    console.log(pos, 'dsada');
-  })
+  // navigator.geolocation.getCurrentPosition( (pos) =>{
+  //   console.log(pos, 'dsada');
+  // })
   
 });
 </script>
@@ -83,6 +84,7 @@ onMounted(() => {
       <div class="app__content">
         <div class="app__container">
           <NuxtPage class="page" />
+          <AppFooter/>
         </div>
       </div>
     </div>
@@ -116,12 +118,13 @@ onMounted(() => {
   }
   // .app__content
   &__content {
-    padding: toRem(120) toRem(0) toRem(0) toRem(0);
+    display: flex;
+    justify-content: center;
+    padding: toRem(120) toRem(0) toRem(80) toRem(0);
   }
   // .app__container
   &__container {
-    display: flex;
-    justify-content: center;
+    width: 100%;
   }
 
   // .app__aside
@@ -135,7 +138,6 @@ onMounted(() => {
   }
 }
 .page {
-  max-width: toRem(600);
   width: 100%;
 }
 </style>

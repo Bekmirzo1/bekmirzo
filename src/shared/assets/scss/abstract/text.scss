@@ -1,30 +1,38 @@
 @use 'mixins' as *;
 @use 'defaults' as *;
 
-$letterSpacing: toRem(-0.1);
+$letterSpacing: toRem(0);
 
 @mixin text () {
-  font-size: toRem(15);
+  font-size: toRem(14);
   letter-spacing: $letterSpacing;
-  line-height: percent(22.5, 15);
+  line-height: percent(28, 14);
 }
 
 @mixin text2 () {
-  font-size: toRem(14);
-  line-height: percent(22.5, 15);
+  font-size: toRem(12.5);
+  line-height: percent(21.6, 15);
 }
 
 .text {
   @include text();
+  &_2 {
+    line-height: percent(25.2, 14);
+  }
 }
 
 .text2 {
   @include text2();
   letter-spacing: $letterSpacing;
+
+  &_2 {
+    line-height: percent(17.5, 12);
+  }
 }
+
 .text3 {
-  font-size: toRem(13);
-  line-height: percent(17.5, 13);
+  font-size: toRem(11);
+  line-height: percent(14, 11);
   letter-spacing: $letterSpacing;
 }
 
@@ -33,15 +41,20 @@ $letterSpacing: toRem(-0.1);
   font-size: toRem(14);
   line-height: percent(28, 14);
   letter-spacing: $letterSpacing;
+
+  &_2 {
+    line-height: percent(17, 14);
+  }
 }
+
 .text-consolas2 {
   font-family: $fontFamilyConsolas;
-  letter-spacing: $letterSpacing;
   font-size: toRem(12);
+  letter-spacing: $letterSpacing;
   line-height: percent(16, 12);
 }
 
-.text-consolas2-highlighted{
+.text-consolas2-highlighted {
   @extend .text-consolas2;
   padding: toRem(2) toRem(4) toRem(0);
   background-color: $bgQuaternaryColor;
@@ -52,11 +65,32 @@ $letterSpacing: toRem(-0.1);
 }
 
 //====================================================================================================
-.headline{
-  font-size: toRem(18);
+.headline-big {
+  font-size: toRem(21);
+  font-weight: 700;
+  line-height: percent(26, 21);
+}
+.headline {
+  font-size: toRem(17);
   font-weight: 600;
-  line-height: percent(24.5, 18);
-  letter-spacing: $letterSpacing;
+  line-height: percent(24.5, 17);
+}
+.headline2 {
+  font-size: toRem(15.75);
+  font-weight: 600;
+  line-height: percent(24.5, 17);
+}
+
+.headline-consolas {
+  font-family: $fontFamilyConsolas;
+  font-size: toRem(17);
+  line-height: percent(24, 17);
+  font-weight: 700;
+
+  // .headline-consolas_2
+  &_2 {
+    line-height: percent(20, 17);
+  }
 }
 
 
@@ -78,6 +112,6 @@ a:has(.link) {
 }
 
 //====================================================================================================
-.gray2{
+.gray2 {
   color: $gray2Color;
 }

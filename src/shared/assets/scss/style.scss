@@ -35,7 +35,7 @@ body {
 
 [class*="__container"],
 .container {
-  // max-width: toRem($containerWidth);
+  max-width: toRem($boxWidth);
   margin: 0 auto;
   padding: 0 var(--container-padding);
 }

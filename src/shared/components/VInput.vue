@@ -4,7 +4,7 @@ import type { InputTypeHTMLAttribute } from "vue";
 defineOptions({
   name: "VInput",
 });
-const model = defineModel<string>();
+const model = defineModel<string | number>();
 interface Props {
   error?: null | boolean;
   type?: InputTypeHTMLAttribute | "textarea";
@@ -44,18 +44,18 @@ const { error = null } = defineProps<Props>();
   width: 100%;
   height: 100%;
   display: block;
-  padding: toRem(12) toRem(8);
+  // padding: toRem(12) toRem(8);
   background-color: transparent;
-  border: toRem(1) solid $mainColor;
+  // border: toRem(1) solid $mainColor;
   &:focus {
     &::placeholder {
       visibility: hidden;
       opacity: 0;
     }
   }
-  &::placeholder {
-    opacity: 0.5;
-  }
+  // &::placeholder {
+  //   opacity: 0.5;
+  // }
 }
 textarea.input {
   resize: none;

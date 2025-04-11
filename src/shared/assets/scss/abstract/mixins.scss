@@ -6,7 +6,8 @@
 $minWidth: 375;
 $maxWidth: 1920;
 $maxWidthContainer: 1366;
-$containerPadding: 40;
+$maxBoxWidth: 598;
+$containerPadding: 20;
 $containerPaddingMob: 12;
 
 
@@ -14,6 +15,7 @@ $maxHeight: 1080;
 
 // Ширина срабатываемых брейкпоинтов
 $containerWidth: $maxWidthContainer;
+$boxWidth: $maxBoxWidth + $containerPadding * 2;
 $laptop: 1366;
 $tablet: 960;
 $mob: 768;
