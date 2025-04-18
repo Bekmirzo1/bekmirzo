@@ -103,6 +103,9 @@ onMounted(() => {
   opacity: 0;
   visibility: hidden;
   overflow-y: auto;
+  &.dark{
+    color-scheme: light dark;
+  }
   &.locked {
     @include overflow-clip;
   }

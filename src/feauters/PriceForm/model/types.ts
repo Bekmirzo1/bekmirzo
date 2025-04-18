@@ -1,3 +1,4 @@
+import type { IntRange } from "@/shared/types";
 import type { CheckOption } from "@/shared/UI/Forms/VCheckbox";
 import type { RadioOption } from "@/shared/UI/Forms/VRadio";
 import type { SelectItem } from "@/shared/UI/Forms/VSelect";
@@ -16,3 +17,5 @@ export interface RadioOptionPrice extends RadioOption {
 export interface PriceCheckBox extends CheckOption {
   val: PriceTypesList;
 }
+
+export type PricePercentRange = IntRange<70, 200>

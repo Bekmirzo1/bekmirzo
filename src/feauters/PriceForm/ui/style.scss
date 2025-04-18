@@ -1,5 +1,7 @@
 @use "@/shared/assets/scss/abstract" as *;
 
+.price-form {}
+
 .price-form {
 
   background-color: $bg2Color;
@@ -11,13 +13,69 @@
   &__top {
     display: flex;
     justify-content: space-between;
-    margin: toRem(0) toRem(0) toRem(20) toRem(0);
+    margin: toRem(0) toRem(0) toRem(10) toRem(0);
+    padding: toRem(10);
+
+    // .price-form__top-item
+    &-item {
+      &:last-child {
+        text-align: right;
+      }
+    }
+
+    // .price-form__top-text
+    &-text {
+      @extend .text2;
+      @extend .text2_2;
+      color: $grayColor;
+    }
+
   }
 
   // .price-form__title
   &__title {
     @extend .headline-big;
+    margin: toRem(0) toRem(0) toRem(0) toRem(0);
   }
+
+  // .price-form__warned
+  &__warned {
+    display: flex;
+    align-items: center;
+    border: toRem(1) solid $dividedColor;
+    border-radius: toRem(8);
+    padding: toRem(4) toRem(7);
+
+    // .price-form__warned-icon
+    &-icon {
+      font-size: 0;
+      line-height: 0;
+      margin: toRem(0) toRem(8) toRem(0) toRem(0);
+
+      img,
+      svg {
+        max-width: 100%;
+      }
+
+      path {
+        fill: $mainColor;
+      }
+
+      rect {
+        stroke: $mainColor;
+      }
+    }
+
+    // .price-form__warned-text
+    &-text {
+      @extend .text;
+      @extend .text_2;
+      color: $grayColor;
+      user-select: none;
+    }
+  }
+
+
 
   // .price-form__row
   &__row {

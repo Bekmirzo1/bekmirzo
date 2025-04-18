@@ -1,6 +1,12 @@
 import { defineStore } from "pinia";
 import type { PriceTypesList, SelectOptionCalc } from "./types";
-import { checkItemsList, landingData, multiPageData, notCount, notCountMulti } from "./data";
+import {
+  checkItemsList,
+  workDataLanding,
+  workDataMulti,
+  notCount,
+  notCountMulti,
+} from "./data";
 import { countTime, roundingUpPrice } from "./methods";
 
 export const usePriceStore = defineStore("price-store", () => {
@@ -11,10 +17,10 @@ export const usePriceStore = defineStore("price-store", () => {
   ] as SelectOptionCalc[]);
   const selectedType = ref(workTypes.value[0]);
 
-  const minVal = ref(landingData.minVal);
-  const maxVal = ref(landingData.maxVal);
+  const minVal = ref(workDataLanding.minVal);
+  const maxVal = ref(workDataLanding.maxVal);
   const amount = ref(minVal.value);
-  const partPrice = ref(landingData.blockPrice);
+  const partPrice = ref(workDataLanding.blockPrice);
 
   function setMinVal(val: number) {
     minVal.value = val;
@@ -34,10 +40,12 @@ export const usePriceStore = defineStore("price-store", () => {
       .filter((item) => item.checked)
       .map((item) => item.val);
   });
+  // Getters ====================================================================================================
 
-  // Getters
+  // Prices
   const finalPrice = computed(() => {
     let val: number = partPrice.value;
+    // let result: number = val;
     let amountVal = amount.value;
     for (let index = 0; index < notCount.length; index++) {
       const number = notCount[index];
@@ -46,21 +54,22 @@ export const usePriceStore = defineStore("price-store", () => {
         break;
       }
     }
+    // result = amountVal * val;
     if (checkBoxChecked.value.find((item) => item == "regular")) {
-      val = roundingUpPrice(val, 80);
+      val = workDataLanding.countPrice(val, workDataLanding.regularPercent);
+      // result = amountVal * val;
     }
     if (checkBoxChecked.value.find((item) => item == "anim")) {
-      val = roundingUpPrice(val, 130);
+      val = workDataLanding.countPrice(val, workDataLanding.animPercent);
+      // result = amountVal * val;
     }
-    // if (selectedType.value.name === "multi") {
-    //   return amount.value * val + multiPageData.startPrice;
-    // }
+    // return result;
     return amountVal * val;
   });
 
   const finalPriceMulti = computed(() => {
     let val: number = partPrice.value;
-    let startPrice = multiPageData.startPrice;
+    let startPrice = workDataMulti.startPrice;
     let amountVal = amount.value;
     for (let index = 0; index < notCountMulti.length; index++) {
       const number = notCountMulti[index];
@@ -70,51 +79,88 @@ export const usePriceStore = defineStore("price-store", () => {
       }
     }
     if (checkBoxChecked.value.find((item) => item == "regular")) {
-      val = roundingUpPrice(val, 80);
-      startPrice = roundingUpPrice(startPrice, 80);
+      const priceCalled = workDataMulti.countPrice(
+        val,
+        startPrice,
+        workDataMulti.regularPercent,
+      );
+      val = priceCalled.price;
+      startPrice = priceCalled.startPrice;
     }
     if (checkBoxChecked.value.find((item) => item == "anim")) {
-      val = roundingUpPrice(val, 120);
-      startPrice = roundingUpPrice(startPrice, 120);
-    }
-    return amountVal * val + startPrice;
-  });
-  const finalTime = computed(() => {
-    let val: number = landingData.blockTime;
-    const animPercent: number = amount.value < 10 ? 150 : 130;
+      const priceCalled = workDataMulti.countPrice(
+        val,
+        startPrice,
+        workDataMulti.animPercent,
+      );
+      console.log(workDataMulti.animPercent);
 
-    if (checkBoxChecked.value.find((item) => item == "anim")) {
-      val = countTime(val, animPercent);
-      return Math.ceil(amount.value * val);
+      val = priceCalled.price;
+      startPrice = priceCalled.startPrice;
     }
-    return Math.floor(amount.value * val);
+    // return amountVal * val + startPrice;
+    return workDataMulti.countPriceFinal(val, startPrice, amountVal);
   });
+
+  // Times
+  const finalTime = computed(() => {
+    let val: number = workDataLanding.blockTime;
+    let amountVal = amount.value;
+
+    for (let index = 0; index < notCount.length; index++) {
+      const number = notCount[index];
+      if (number < amount.value) {
+        amountVal = amount.value - (notCount.length - index);
+        break;
+      }
+    }
+    const timeAnim: number = 150;
+
+    // const timeAnim: number = amount.value < 10 ? 150 : 130;
+    if (checkBoxChecked.value.find((item) => item == "anim")) {
+      val = countTime(val, timeAnim);
+      return Math.ceil(amountVal * val);
+    }
+    return Math.floor(amountVal * val);
+  });
+
   const finalTimeMulti = computed(() => {
-    let val: number = multiPageData.pageTime;
-    const timePercent: number = amount.value < 7 ? 120 : 100;
+    let val: number = workDataMulti.pageTime;
+    let amountVal = amount.value;
+    for (let index = 0; index < notCountMulti.length; index++) {
+      const number = notCountMulti[index];
+      if (number < amount.value) {
+        amountVal = amount.value - (notCountMulti.length - index);
+        break;
+      }
+    }
+    const timePercent = 120;
+    // const timePercent: number = amountVal < 7 ? 120 : 90;
     val = countTime(val, timePercent);
     if (checkBoxChecked.value.find((item) => item == "anim")) {
       val = countTime(val, timePercent * 1.5);
-      return Math.ceil(amount.value * val) + multiPageData.startTime;
+      return Math.ceil(amountVal * val) + workDataMulti.startTime;
     }
-    return Math.floor(amount.value * val) + multiPageData.startTime;
+    return Math.floor(amountVal * val) + workDataMulti.startTime;
   });
-  // Getters
+  //====================================================================================================
 
+  // Watchers
   watch(selectedType, (newVal) => {
     if (newVal.name === "multi") {
-      setMinVal(multiPageData.minVal);
-      setMaxVal(multiPageData.maxVal);
-      setAmount(multiPageData.minVal);
-      setPartPrice(multiPageData.pagePrice);
+      setMinVal(workDataMulti.minVal);
+      setMaxVal(workDataMulti.maxVal);
+      setAmount(workDataMulti.minVal);
+      setPartPrice(workDataMulti.pagePrice);
     }
     if (newVal.name === "land") {
-      setMinVal(landingData.minVal);
-      setMaxVal(landingData.maxVal);
-      setAmount(landingData.minVal);
-      setPartPrice(landingData.blockPrice);
+      setMinVal(workDataLanding.minVal);
+      setMaxVal(workDataLanding.maxVal);
+      setAmount(workDataLanding.minVal);
+      setPartPrice(workDataLanding.blockPrice);
     }
   });
+
   return {
     workTypes,
     selectedType,

@@ -1,2 +1,95 @@
 @use "@/shared/assets/scss/abstract" as *;
 
+.price-calculator {
+
+  // .price-calculator__title
+  &__title {
+    @extend .headline-consolas;
+    @extend .headline-consolas_2;
+    padding: toRem(4);
+    // padding: toRem(4) toRem(4)toRem(4) toRem(4);
+    background-color: #F0F0F0;
+    border-radius: toRem(4);
+    display: inline-block;
+    margin: toRem(0) toRem(0) toRem(20) toRem(0);
+  }
+
+  // .price-calculator__form
+  &__form {
+    margin: toRem(0) toRem(0) toRem(48) toRem(0);
+  }
+
+  // .price-calculator__model
+  &__model {}
+}
+
+.model-show-price {
+
+  // .model-show-price__title
+  &__title {
+    text-align: right;
+    @extend .text;
+    @extend .text_2;
+    font-weight: 600;
+    color: $gray3Color;
+    padding: toRem(0) toRem(0) toRem(7) toRem(0);
+    border-bottom: toRem(1) solid $dividedColor;
+    margin: toRem(0) toRem(0) toRem(20) toRem(0);
+  }
+
+  // .model-show-price__blocks
+  &__blocks {}
+
+  // .model-show-price__block
+  &__block {}
+
+  // .model-show-price__item
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: toRem(0) toRem(0) toRem(7) toRem(0);
+    border-bottom: toRem(1) solid $dividedColor;
+
+    &:not(:last-child) {
+      margin-bottom: toRem(4);
+    }
+  }
+
+  // .model-show-price__name
+  &__name {
+    @extend .text;
+    line-height: percent(21, 14);
+    font-weight: 600;
+  }
+
+  // .model-show-price__price
+  &__price {
+    @extend .text2;
+    @extend .text2_2;
+    font-weight: 600;
+    color: $gray2Color;
+  }
+
+  // .model-show-price__discounts
+  &__discounts {
+    display: flex;
+    margin: toRem(28) toRem(0);
+    @extend .text;
+    color: $grayColor;
+    &::before {
+      content: "";
+      width: toRem(2);
+      // height: 100%;
+      // height: toRem(28);
+      margin: toRem(0) toRem(20) toRem(0) toRem(0);
+      background-color: $dividedColor;
+    }
+  }
+
+  // .model-show-price__discount-title
+  &__discount-title {
+    @extend .text;
+    color: $grayColor;
+  }
+}

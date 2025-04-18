@@ -21,6 +21,7 @@ body {
   background-color: $bgColor;
   color: $mainColor;
   @include overflow-clip;
+  
 
   @supports not selector(:has(a, b)) {
     .app {
