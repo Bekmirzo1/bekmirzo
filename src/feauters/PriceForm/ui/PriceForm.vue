@@ -3,7 +3,12 @@ import { VSlider } from "@/shared/UI/Forms/VSlider/";
 import { VInputCount } from "@/shared/UI/Forms/VInputCount";
 import { VSelectSmooth } from "@/shared/UI/Forms/VSelect";
 import { VCheck } from "@/shared/UI/Forms/VCheckbox";
-import { workDataLanding, workDataMulti, usePriceStore } from "../model";
+import {
+  workDataLanding,
+  workDataMulti,
+  usePriceStore,
+  workDataStore,
+} from "../model";
 
 const priceStore = usePriceStore();
 
@@ -17,6 +22,9 @@ function updatedSlider() {
     if (priceStore.selectedType.name === "multi") {
       priceStore.setAmount(workDataMulti.minVal);
     }
+    if (priceStore.selectedType.name === "store") {
+      priceStore.setAmount(workDataStore.minVal);
+    }
   }
 }
 </script>
@@ -26,15 +34,17 @@ function updatedSlider() {
       <div class="price-form__top-item">
         <h3 class="price-form__title">
           $&#8202;<template v-if="priceStore.selectedType.name == 'land'">
-            {{ priceStore.finalPrice }} </template
-          ><template v-if="priceStore.selectedType.name == 'multi'">
+            {{ priceStore.finalPrice }}
+          </template>
+          <template v-if="priceStore.selectedType.name == 'multi'">
             {{ priceStore.finalPriceMulti }}
+          </template>
+          <template v-if="priceStore.selectedType.name == 'store'">
+            {{ priceStore.finalPriceStore }}
           </template>
           у.е.
         </h3>
-        <div class="price-form__top-text">
-          итоговая стоимость
-        </div>
+        <div class="price-form__top-text"> итоговая стоимость </div>
       </div>
       <div class="price-form__top-item">
         <h3 class="price-form__title">
@@ -44,11 +54,12 @@ function updatedSlider() {
           <template v-if="priceStore.selectedType.name == 'multi'">
             {{ priceStore.finalTimeMulti }}-{{ priceStore.finalTimeMulti + 1 }}
           </template>
+          <template v-if="priceStore.selectedType.name == 'store'">
+            {{ priceStore.finalTimeStore }}-{{ priceStore.finalTimeStore + 1 }}
+          </template>
           дней
         </h3>
-        <div class="price-form__top-text"> 
-          время на реализацию
-        </div>
+        <div class="price-form__top-text"> время на реализацию </div>
       </div>
     </div>
     <div class="form__rows">

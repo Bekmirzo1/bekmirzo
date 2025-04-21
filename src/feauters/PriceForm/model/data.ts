@@ -3,6 +3,7 @@ import type {
   PriceCheckBox,
   PricePercentRange,
   RadioOptionPrice,
+  WorkDataMultiType,
 } from "./types";
 
 export const notCount = [13, 9, 17].toSorted((a, b) => a - b).toReversed();
@@ -14,8 +15,9 @@ export const workDataLanding = {
   maxVal: 20,
   blockPrice: 35,
   blockTime: 0.7,
-  animPercent: 135,
+  animPercent: 140,
   regularPercent: 90,
+  animPercentTime: 150,
   countPrice(
     val: number | undefined = undefined,
     percent: number | undefined = undefined,
@@ -30,55 +32,27 @@ export const workDataLanding = {
   },
 };
 
-export const workDataMulti = {
+export const workDataMulti: WorkDataMultiType = {
   minVal: 2,
   maxVal: 20,
   startPrice: 200,
   startTime: 6,
   pagePrice: 50,
-  pageTime: 1,
-  animPercent: 135 as PricePercentRange,
-  regularPercent: 80 as PricePercentRange,
-  countPrice(
-    price: number | undefined = undefined,
-    startPrice: number | undefined = undefined,
-    percent: PricePercentRange | undefined = undefined,
-  ): { price: number; startPrice: number } {
-    if (!price) {
-      price = this.pagePrice;
-    }
-    if (!startPrice) {
-      startPrice = this.startPrice;
-    }
-    if (!percent) {
-      percent = this.regularPercent;
-    }
-    return {
-      price: roundingUpPrice(price, percent),
-      startPrice: roundingUpPrice(startPrice, percent),
-    };
-  },
-  countPriceFinal(
-    price: number | undefined = undefined,
-    startPrice: number | undefined = undefined,
-    amount: number | undefined = undefined,
-    percent: PricePercentRange | undefined = undefined,
-  ): number {
-    if (!price) {
-      price = this.pagePrice;
-    }
-    if (!startPrice) {
-      startPrice = this.startPrice;
-    }
-    if (!amount) {
-      amount = this.minVal;
-    }
-    if (percent) {
-      const result = this.countPrice(price, startPrice, percent);
-      return amount * result.price + result.startPrice;
-    }
-    return amount * price + startPrice;
-  },
+  pageTime: 1.2,
+  animPercentTime: 150,
+  animPercent: 135,
+  regularPercent: 85,
+};
+export const workDataStore: WorkDataMultiType = {
+  minVal: 2,
+  maxVal: 20,
+  startPrice: 250,
+  startTime: 7,
+  pagePrice: 60,
+  pageTime: 1.4,
+  animPercentTime: 150,
+  animPercent: 125,
+  regularPercent: 85,
 };
 export const radioItems: RadioOptionPrice[] = [
   {

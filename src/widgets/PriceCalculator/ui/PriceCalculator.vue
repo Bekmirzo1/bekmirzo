@@ -3,6 +3,7 @@ import { PriceForm, usePriceStore } from "@/feauters/PriceForm";
 import {
   priceCalculatorLanding,
   priceCalculatorMulti,
+  priceCalculatorStore,
   type PriceCalculatorData,
 } from "../model";
 
@@ -45,6 +46,17 @@ watch(
       priceDataModel.value.animationDiscount =
         priceCalculatorMulti.animationDiscount;
       priceDataModel.value.partDiscount = priceCalculatorMulti.partDiscount;
+    } else if (newVal.name === "store") {
+      priceDataModel.value.content = priceCalculatorStore.content;
+      priceDataModel.value.contentAnim = priceCalculatorStore.contentAnim;
+      priceDataModel.value.contentPart = priceCalculatorStore.contentPart;
+      priceDataModel.value.price = priceCalculatorStore.price;
+      priceDataModel.value.discount = priceCalculatorStore.discount;
+      priceDataModel.value.animation = priceCalculatorStore.animation;
+      priceDataModel.value.part = priceCalculatorStore.part;
+      priceDataModel.value.animationDiscount =
+        priceCalculatorStore.animationDiscount;
+      priceDataModel.value.partDiscount = priceCalculatorStore.partDiscount;
     }
   },
 );
