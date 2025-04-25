@@ -5,7 +5,8 @@ useHead({
   title: "Стоимость",
 });
 
-const currencyLink = 'https://www.google.com/search?q=%D0%B4%D0%BE%D0%BB%D0%BB%D0%B0%D1%80+%D1%80%D1%83%D0%B1%D0%BB%D1%8C&oq=%D0%B4%D0%BE%D0%BB%D0%BB%D0%B0%D1%80+%D1%80%D1%83%D0%B1%D0%BB%D1%8C&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQLhhA0gEINjUwMGowajGoAgCwAgA&sourceid=chrome&ie=UTF-8';
+const currencyLink =
+  "https://www.google.com/search?q=%D0%B4%D0%BE%D0%BB%D0%BB%D0%B0%D1%80+%D1%80%D1%83%D0%B1%D0%BB%D1%8C&oq=%D0%B4%D0%BE%D0%BB%D0%BB%D0%B0%D1%80+%D1%80%D1%83%D0%B1%D0%BB%D1%8C&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQLhhA0gEINjUwMGowajGoAgCwAgA&sourceid=chrome&ie=UTF-8";
 </script>
 <template>
   <div class="price">
@@ -17,7 +18,7 @@ const currencyLink = 'https://www.google.com/search?q=%D0%B4%D0%BE%D0%BB%D0%BB%D
       <PriceCalculator class="price__calculator" />
       <section class="price__bonuses bonus-price">
         <div class="bonus-price__top">
-          <h2 class="bonus-price__title"> Скидки и бонусы!&nbsp&nbsp🎉</h2>
+          <h2 class="bonus-price__title"> Скидки и бонусы!&nbsp;&nbsp;🎉</h2>
         </div>
         <div class="bonus-price__rows">
           <!-- bonus-price__row 1 -->
@@ -49,7 +50,7 @@ const currencyLink = 'https://www.google.com/search?q=%D0%B4%D0%BE%D0%BB%D0%BB%D
         </div>
       </section>
       <section class="price__prepayment prepayment-price">
-        <h2 class="prepayment-price__title"> Предоплата&nbsp&nbsp💸 </h2>
+        <h2 class="prepayment-price__title"> Предоплата&nbsp;&nbsp;💸</h2>
         <div class="prepayment-price__text">
           Я работаю по предоплате в 150 у.е. Можно оплатить в рублях на любой из
           моих <br />
@@ -57,7 +58,10 @@ const currencyLink = 'https://www.google.com/search?q=%D0%B4%D0%BE%D0%BB%D0%BB%D
           обычно смотрю просто в гугле:
         </div>
         <div class="prepayment-price__image">
-          <a :href="currencyLink" class="prepayment-price__image-wrapper" target="_blank">
+          <a
+            :href="currencyLink"
+            class="prepayment-price__image-wrapper"
+            target="_blank">
             <div class="prepayment-price__image-body">
               <img src="@/shared/assets/images/price/currency.jpg" alt="" />
             </div>
@@ -94,7 +98,7 @@ const currencyLink = 'https://www.google.com/search?q=%D0%B4%D0%BE%D0%BB%D0%BB%D
       </section>
       <section class="price__ready ready-price">
         <h2 class="ready-price__title">
-          готов обсудить ваш проект, а вы?&nbsp&nbsp✍️
+          готов обсудить ваш проект, а вы?&nbsp;&nbsp;✍️
         </h2>
         <div class="ready-price__columns">
           <div class="ready-price__column">

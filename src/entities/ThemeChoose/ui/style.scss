@@ -1,41 +1,57 @@
+@use "sass:math";
+
 @use "@/shared/assets/scss/abstract" as *;
 $trsDurDef: 0.3s;
 $easeDef: ease;
 
-// @include adaptiveValue("", , );
-
+$buttonWidth: 30;
+$buttonHeight: 18;
+$buttonPadding: 2;
+$buttonInnerWidth: $buttonWidth - $buttonPadding * 2;
+$roundHeight: $buttonHeight - $buttonPadding * 2;
 
 .theme-choose {
   font-size: toRem(0);
 
   // .theme-choose__body
   &__body {
+
     padding: toRem(1);
     display: inline-block;
-    border-radius: toRem(6);
-    background-color: $bgTertiaryColor;
+    border-radius: toRem(50);
+    
   }
 
   // .theme-choose__button
   &__button {
-    display: inline-flex;
-    position: relative;
-    z-index: 1;
-
+    width: toRem($buttonWidth);
+    height: toRem($buttonHeight);
+    padding: toRem(2);
+    border-radius: toRem(50);
+    transition: background-color 0.3s ease 0s;
+    @include themeValues(background-color, $bgTertiaryColor, $blue3Color);
+    // .theme-choose__button-body
+    &-body {
+      position: relative;
+      z-index: 1;
+      display: block;
+      height: 100%;
+    }
   }
 
-  // .theme-choose__hightlight
-  &__hightlight {
+  // .theme-choose__highlight
+  &__highlight {
     position: absolute;
-    width: calc(50% - toRem(1));
+    // width: calc(50% - toRem(1));
+    width: toRem($roundHeight);
     height: 100%;
     top: 0;
     left: 0;
-    background-color: $bgColor;
+    background-color: #FCFCFC;
     z-index: -1;
     transition: transform $trsDurDef $easeDef 0s;
-    border-radius: toRem(5);
-    @include themeValues(transform, translate(0, 0), translate(calc(100% + toRem(1)), 0));
+    border-radius: 50%;
+    @include themeValues(transform, translate(0, 0), translate(toRem($buttonInnerWidth - $roundHeight), 0));
   }
 
   // .theme-choose__item

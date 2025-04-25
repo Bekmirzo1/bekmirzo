@@ -11,7 +11,10 @@ $fontSize: toRem(15);
     --bg-color2: #F5F5F5;
     --yellow-color: #D1AA2B;
     --bg-teritary: #E8E8E8;
-    --bg-five-fold-color: #fff;
+    --bg-quaternary: #F0F0F0;
+    --white-color: #fff;
+    --black-color: #000;
+    --black-color-six: rgba(0, 0, 0, 0.64);
   }
 
   @mixin changeToDark () {
@@ -19,7 +22,10 @@ $fontSize: toRem(15);
     --bg-color2: #1a1a1a;
     --text-color: #dfdfdf;
     --bg-teritary: #171717;
-    --bg-five-fold-color: #000;
+    --bg-quaternary: #0f0f0f;
+    --white-color: #000;
+    --black-color: #ffffff;
+    --black-color-six: rgba(255, 255, 255, 0.64);
   }
 
   @media (prefers-color-scheme: light) {
@@ -70,14 +76,17 @@ $mainColor: var(--text-color);
 $bgColor: var(--bg-color);
 $bg2Color: var(--bg-color2);
 $bgTertiaryColor: var(--bg-teritary);
-$bgQuaternaryColor: #F0F0F0;
-$bgFivefoldColor: var(--bg-five-fold-color);
-$dividedColor: #E8E8E8;
+$bgQuaternaryColor: var(--bg-quaternary);
+$whiteColor: var(--white-color);
+$blackColor: var(--black-color);
+$blackColorSix: var(--black-color-six);
+$dividedColor: var(--bg-teritary);
 $divided2Color: #D1D5DB;
 $grayColor: #4B5563;
 $gray2Color: #6B7280;
 $gray3Color: #9CA3AF;
 $greenColor: #15803D;
+$blue3Color: #436F5E;
 $yellowColor: var(--yellow-color);
 
 

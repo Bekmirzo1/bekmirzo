@@ -1,8 +1,5 @@
-export interface PageRoute {
-  link: string;
-  name: string;
-  parent?: string;
-}
+import type { PageRoute } from "./types";
+
 
 interface PageRoutes {
   home: PageRoute;

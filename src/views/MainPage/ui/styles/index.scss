@@ -1,12 +1,12 @@
 @use "@/shared/assets/scss/abstract" as *;
 
 .main {
-  padding: toRem(0) toRem(0) toRem(96) toRem(0);
+  padding: toRem(0) toRem(0) toRem(28) toRem(0);
   // .main__content
   &__content {
   }
   // .main__desc
   &__desc {
-    margin: toRem(0) toRem(0) toRem(24) toRem(0);
+    margin: toRem(0) toRem(0) toRem(28) toRem(0);
   }
 }

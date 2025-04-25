@@ -8,10 +8,11 @@ defineEmits(["change-theme"]);
         class="theme-choose__button"
         type="button"
         @click="$emit('change-theme')">
-        <div class="theme-choose__hightlight"></div>
-        <span class="theme-choose__item theme-choose__item_left">
+        <span class="theme-choose__button-body">
+          <span class="theme-choose__highlight"></span>
+        </span>
+        <!-- <span class="theme-choose__item theme-choose__item_left">
           <div class="theme-choose__icon">
-            <!-- <img src="@/shared/assets/images/icons/light-mode.svg" alt="" /> -->
             <svg
               width="16"
               height="16"
@@ -60,9 +61,8 @@ defineEmits(["change-theme"]);
                 d="M7 13.5C10.5899 13.5 13.5 10.5899 13.5 7C13.5 3.41015 10.5899 0.5 7 0.5C6.62757 0.5 6.26246 0.531322 5.90715 0.591475C7.9576 1.01118 9.5 2.82547 9.5 5C9.5 7.48528 7.48528 9.5 5 9.5C2.82547 9.5 1.01118 7.9576 0.591475 5.90715C0.531322 6.26246 0.5 6.62757 0.5 7C0.5 10.5899 3.41015 13.5 7 13.5Z"
                 fill="#202020" />
             </svg>
-            <!-- <img src="@/shared/assets/images/icons/dark-mode.svg" alt="" /> -->
           </div>
-        </span>
+        </span> -->
       </button>
     </div>
   </div>

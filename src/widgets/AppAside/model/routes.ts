@@ -5,7 +5,7 @@ interface MainRoute {
   route: RoutesValue;
 }
 interface MainRouteEmoji extends MainRoute {
-  icon: string
+  icon: string;
 }
 export const asideMainRoutes: MainRoute[] = [
   { name: "index", route: PAGE_ROUTES.home.link },
@@ -14,7 +14,7 @@ export const asideMainRoutes: MainRoute[] = [
   { name: "архив", route: PAGE_ROUTES.archieve.link },
 ] as const;
 export const asideRoutesMore: MainRouteEmoji[] = [
-  { name: "read.cv", route: PAGE_ROUTES.about.link, icon: '💼' },
-  { name: "стоимость", route: PAGE_ROUTES.price.link, icon: '💰' },
-  { name: "условия", route: PAGE_ROUTES.agreement.link, icon: '🤝' },
+  { name: "read.cv", route: PAGE_ROUTES.about.link, icon: "💼" },
+  { name: "стоимость", route: PAGE_ROUTES.price.link, icon: "💰" },
+  { name: "условия", route: PAGE_ROUTES.agreement.link, icon: "🤝" },
 ] as const;

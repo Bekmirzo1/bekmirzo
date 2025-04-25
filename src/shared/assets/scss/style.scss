@@ -20,7 +20,7 @@ html {
 body {
   background-color: $bgColor;
   color: $mainColor;
-  @include overflow-clip;
+  // @include overflow-clip;
   
 
   @supports not selector(:has(a, b)) {

@@ -37,17 +37,21 @@
   // .aside__name
   &__name {
     @extend .text;
+    @extend .text_3;
     font-weight: 600;
+    margin: toRem(0) toRem(0) toRem(2) toRem(0);
   }
 
   // .aside__activity
   &__activity {
     @extend .text2;
+    @extend .text2_2;
   }
 
   // .aside__text
   &__text {
     @extend .text2;
+    @extend .text2_2;
     margin: toRem(16) toRem(0) toRem(0) toRem(0);
   }
 
@@ -83,7 +87,9 @@
   // .links-aside__link
   &__link {
     @extend .text;
+    @extend .text_2;
     font-weight: 600;
+    letter-spacing: $letterSpacing2;
 
     // display: inline-flex;
     // align-items: flex-end;

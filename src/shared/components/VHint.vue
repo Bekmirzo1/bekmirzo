@@ -45,7 +45,7 @@ const { text = "Перейти по ссылке" } = defineProps<Props>();
       padding: toRem(6) toRem(10);
       border: toRem(1) solid $dividedColor;
       border-radius: toRem(6);
-      background-color: $bgFivefoldColor;
+      background-color: $whiteColor;
       box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.122);
       opacity: 0;
       visibility: hidden;

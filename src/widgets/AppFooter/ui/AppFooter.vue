@@ -1,22 +1,19 @@
 <script setup lang="ts">
-
-import { SOCIAL_LINKS } from '@/shared/config';
-
+import { SOCIAL_LINKS } from "@/shared/config";
 </script>
 <template>
   <footer class="footer">
     <div class="footer__body">
       <div class="footer__left">
-        <div class="footer__time">
-          06:06:54 PM
-        </div>
-        <div class="footer__date">
-          12 февраля, 2025
-        </div>
+        <div class="footer__time"> 06:06:54 PM </div>
+        <div class="footer__date"> 12 февраля, 2025 </div>
       </div>
       <div class="footer__right">
         <div class="footer__author">
-          <a :href="SOCIAL_LINKS.designer" class="footer__author-link" target="_blank">
+          <a
+            :href="SOCIAL_LINKS.designer"
+            class="footer__author-link"
+            target="_blank">
             <span class="footer__author-text">
               👨‍🎨 design by Ivan Taskayev
             </span>
@@ -32,5 +29,5 @@ import { SOCIAL_LINKS } from '@/shared/config';
   </footer>
 </template>
 <style lang="scss" scoped>
-@use './style.scss';
+@use "./style.scss";
 </style>

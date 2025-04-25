@@ -4,62 +4,33 @@
 
   // .desc-main__top
   &__top {
-    margin: toRem(0) toRem(0) toRem(40) toRem(0);
-    padding: toRem(0) toRem(0) toRem(9) toRem(0);
-    border-bottom: toRem(1) solid $dividedColor;
+    margin: toRem(0) toRem(0) toRem(28) toRem(0);
   }
 
-  // .desc-main__logo
-  &__logo {
-    width: toRem(24);
-    margin: toRem(0) toRem(0) toRem(24) toRem(0);
+  // .desc-main__title
+  &__title {
+    @extend .text;
+    @extend .text_3;
+    font-weight: 600;
   }
 
-  // .desc-main__logo-image
-  &__logo-image {
-    @extend .ibg;
-    padding-bottom: 100%;
-    @include overflow-hidden-strict;
-    border-radius: 50%;
-
-  }
-
-  // .desc-main__row
-  &__row {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-   
-
-    // .desc-main__row-title
-    &-title {}
-
-    // .desc-main__row-right
-    &-right {
-      margin: toRem(12) toRem(0) toRem(0) toRem(0);
-    }
-
-    // .desc-main__row-link
-    &-link {
-      @extend .text-consolas2;
-      color: $gray2Color;
-    }
+  // .desc-main__subtitle
+  &__subtitle {
+    @extend .text2;
+    @extend .text2_2;
+    color: $gray2Color;
   }
 
   // .desc-main__body
-  &__body {}
+  &__body {
+    margin: toRem(0) toRem(0) toRem(32) toRem(0);
+  }
 
   // .desc-main__content
   &__content {
     @extend .text;
-    padding: toRem(0) toRem(0) toRem(24) toRem(0);
-    border-bottom: toRem(1) solid $dividedColor;
-
-    >p {
-      &:not(:last-child) {
-        margin-bottom: toRem(24);
-      }
-    }
+    @extend .text_2;
+    margin: toRem(0) toRem(0) toRem(14) toRem(0);
   }
 
   // .desc-main__highlighted
@@ -67,10 +38,78 @@
     @extend .text-consolas2-highlighted;
   }
 
-  // .desc-main__bottom
+  // .desc-main__links
+  &__links {
+    display: flex;
+    gap: toRem(24);
+
+    li {
+      a {
+        color: $grayColor;
+        font-weight: 600;
+        @extend .link;
+        @extend .text;
+        @extend .text_2;
+        letter-spacing: toRem(-0.1);
+      }
+    }
+  }
+
+  // .desc-main__contact
+  &__contact {}
+}
+
+.contact-desc-main {
+
+  // .contact-desc-main__title
+  &__title {
+    @extend .text;
+    font-weight: 600;
+    @extend .text_2;
+    color: $gray2Color;
+    margin: toRem(0) toRem(0) toRem(14) toRem(0);
+  }
+
+  // .contact-desc-main__list
+  &__list {
+  }
+
+  // .contact-desc-main__item
+  &__item {
+    border-bottom: toRem(1) solid $dividedColor;
+  }
+
+  // .contact-desc-main__link
+  &__link {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: toRem(8) toRem(0);
+  }
+
+  // .contact-desc-main__link-left
+  &__link-left {
+    padding: toRem(9) toRem(0) toRem(11);
+    @extend .text;
+    @extend .text_3;
+    font-weight: 600;
+  }
+
+  // .contact-desc-main__link-right
+  &__link-right {
+    @extend .text3;
+    color: $gray2Color;
+  }
+
+  // .contact-desc-main__bottom
   &__bottom {
     display: flex;
     justify-content: flex-end;
     margin: toRem(12) toRem(0) toRem(0) toRem(0);
+    // .contact-desc-main__bottom-link
+    &-link {
+      @extend .text2;
+      @extend .text2_2;
+    }
   }
 }

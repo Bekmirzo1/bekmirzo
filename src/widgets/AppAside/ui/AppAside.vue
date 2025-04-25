@@ -164,12 +164,7 @@ if (productionMode) {
                 }"
                 class="links-aside__item">
                 <nuxt-link :to="asideRoute2.route" class="links-aside__link">
-                  <span class="links-aside__link-icon">
-                    {{ asideRoute2.icon }}
-                  </span>
-                  <span class="links-aside__link-text">
-                    {{ asideRoute2.name }}
-                  </span>
+                    {{ asideRoute2.icon }} {{ asideRoute2.name }}
                 </nuxt-link>
               </li>
             </ul>

@@ -260,7 +260,6 @@ $dur: var(--time);
     z-index: 2;
     width: toRem(16 + 20);
     height: 100%;
-    // background-color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -327,7 +326,7 @@ $dur: var(--time);
       transition: background-color 0.3s ease 0s;
       &:hover {
         background-color: $grayColor;
-        color: $bgFivefoldColor;
+        color: $whiteColor;
       }
     }
   }

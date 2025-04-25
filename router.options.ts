@@ -14,6 +14,11 @@ export default {
       component: () => import("@/pages/index.vue").then((r) => r.default || r),
     },
     {
+      name: "scroll",
+      path: '/scroll',
+      component: () => import("@/pages/scroll.vue").then((r) => r.default || r),
+    },
+    {
       name: "about",
       path: PAGE_ROUTES.about.link,
       component: () =>

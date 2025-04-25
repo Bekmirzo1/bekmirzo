@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import gsap from "gsap";
 import { useAppTransitionStore, useLoadStore } from "@/shared/store";
-import { productionMode } from "@/shared/config";
+import { animationDefaults, productionMode } from "@/shared/config";
 const appTransitionStore = useAppTransitionStore();
 const loadStore = useLoadStore();
 const appCoverElem = useTemplateRef("app-cover");
@@ -26,7 +26,7 @@ if (productionMode) {
       if (newVal && loadStore.fullLoaded) {
         gsap
           .timeline({
-            defaults: { duration: preloadCoverDuration, ease: "sine.inOut" },
+            defaults: { duration: preloadCoverDuration, ease: animationDefaults.ease },
             onComplete() {
               appTransitionStore.coverTransitionEnd();
             },

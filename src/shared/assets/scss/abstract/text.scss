@@ -2,6 +2,7 @@
 @use 'defaults' as *;
 
 $letterSpacing: toRem(0);
+$letterSpacing2: toRem(-0.1);
 
 @mixin text () {
   font-size: toRem(14);
@@ -11,13 +12,16 @@ $letterSpacing: toRem(0);
 
 @mixin text2 () {
   font-size: toRem(12.5);
-  line-height: percent(21.6, 15);
+  line-height: percent(21.6, 12.5);
 }
 
 .text {
   @include text();
   &_2 {
     line-height: percent(25.2, 14);
+  }
+  &_3 {
+    line-height: percent(21, 14);
   }
 }
 
@@ -26,7 +30,7 @@ $letterSpacing: toRem(0);
   letter-spacing: $letterSpacing;
 
   &_2 {
-    line-height: percent(17.5, 12);
+    line-height: percent(17.5, 12.5);
   }
 }
 

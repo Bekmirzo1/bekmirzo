@@ -237,7 +237,7 @@ function paste(event: ClipboardEvent) {
 <style lang="scss" scoped>
 input {
   -moz-appearance: textfield;
-  background-color: #fff;
+  background-color: $whiteColor;
   border: 1px solid #ddd;
   border-radius: 0.25rem;
   display: block;

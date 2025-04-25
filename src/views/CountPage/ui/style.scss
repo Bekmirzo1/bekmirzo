@@ -129,7 +129,7 @@ $marginBottom: 48;
 
   // .prepayment-price__image
   &__image {
-    background-color: $bgFivefoldColor;
+    background-color: $whiteColor;
     border: toRem(1) solid $dividedColor;
     border-radius: toRem(8);
 
@@ -179,7 +179,7 @@ $marginBottom: 48;
     text-align: center;
     padding: toRem(18) toRem(20) toRem(14);
     margin: toRem(5) toRem(0) toRem(0) toRem(0);
-    background-color: $bgFivefoldColor;
+    background-color: $whiteColor;
     color: $gray2Color;
     border-radius: toRem(5);
   }

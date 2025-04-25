@@ -9,13 +9,13 @@ import { AppCover } from "./app/AppCover";
 import { AppAside } from "./widgets/AppAside";
 import { AppFooter } from "./widgets/AppFooter";
 
+// import gsap from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
+// gsap.registerPlugin(ScrollTrigger);
 // useHead({ htmlAttrs: { lang: "ru" } });
 const appTransitionStore = useAppTransitionStore();
 const loadStore = useLoadStore();
 const pageLockStatus = useLockStatusStore();
-
-
-
 
 const themeDefault: Ref<undefined | "dark" | "light"> = useCookie("theme");
 const isDark: Ref<boolean | null> = ref(null);
@@ -48,6 +48,7 @@ watch(
 loadStore.mainLoad();
 const appLoaded = ref(false);
 onMounted(() => {
+  // ScrollTrigger.defaults({ scroller: ".app" });
   if (isDark.value === null) {
     const getCurrentTheme = (): boolean =>
       window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -59,19 +60,16 @@ onMounted(() => {
   }
   appLoaded.value = true;
 
-
-
   // navigator.geolocation.getCurrentPosition( (pos) =>{
   //   console.log(pos, 'dsada');
   // })
-  
 });
 </script>
 <template>
   <div
     class="app"
     :class="{
-      'locked': pageLockStatus.locked === true,
+      'lock': pageLockStatus.locked === true,
       'dark': isDark,
       'light': isDark == false,
       'loaded': appLoaded === true,
@@ -84,7 +82,7 @@ onMounted(() => {
       <div class="app__content">
         <div class="app__container">
           <NuxtPage class="page" />
-          <AppFooter/>
+          <AppFooter />
         </div>
       </div>
     </div>
@@ -94,22 +92,38 @@ onMounted(() => {
 @use "./shared/assets/scss/style";
 #__nuxt {
   // min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+  // display: flex;
+  // flex-direction: column;
+  // height: 100%;
+}
+html {
+  color-scheme: light;
+  &:has(.dark) {
+    color-scheme: light dark;
+  }
+  @supports not selector(:has(a, b)) {
+    &.dark {
+      color-scheme: light dark;
+    }
+  }
+}
+body {
+  &:has(.lock) {
+    @include overflow-clip;
+  }
+  @supports not selector(:has(a, b)) {
+    .lock & {
+      @include overflow-clip;
+    }
+  }
 }
 .app {
   flex: 1 1 auto;
-  opacity: 0;
-  visibility: hidden;
-  overflow-y: auto;
-  &.dark{
-    color-scheme: light dark;
-  }
-  &.locked {
-    @include overflow-clip;
-  }
-  &.loaded{
+  // opacity: 0;
+  // visibility: hidden;
+  // overflow-y: auto;
+
+  &.loaded {
     opacity: 1;
     visibility: visible;
   }
@@ -123,7 +137,7 @@ onMounted(() => {
   &__content {
     display: flex;
     justify-content: center;
-    padding: toRem(120) toRem(0) toRem(80) toRem(0);
+    padding: toRem(104) toRem(0) toRem(80) toRem(0);
   }
   // .app__container
   &__container {

@@ -151,7 +151,6 @@ $dur: var(--time);
     z-index: 2;
     width: toRem(50);
     height: 100%;
-    // background-color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -181,7 +180,7 @@ $dur: var(--time);
     &-body {
       border-radius: toRem(10);
       margin: toRem(10) toRem(0) toRem(0) toRem(0);
-      background-color: #fff;
+      background-color: $whiteColor;
       filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.5));
       overflow: hidden;
       transform: translateZ(0);
